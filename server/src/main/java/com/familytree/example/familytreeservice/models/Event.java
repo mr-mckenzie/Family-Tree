@@ -1,14 +1,15 @@
 package com.familytree.example.familytreeservice.models;
 
+import java.util.Calendar;
 import java.util.Date;
 
 public class Event {
     private String type;
-    private Date date;
+    private Calendar date;
     private String location;
     private String citation;
 
-    public Event(String type, Date date, String location, String citation) {
+    public Event(String type, Calendar date, String location, String citation) {
         this.type = type;
         this.date = date;
         this.location = location;
@@ -19,7 +20,7 @@ public class Event {
         return type;
     }
 
-    public Date getDate() {
+    public Calendar getDate() {
         return date;
     }
 

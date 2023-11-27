@@ -4,17 +4,20 @@ import com.familytree.example.familytreeservice.models.Event;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.time.Year;
+import java.util.Calendar;
 import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EventTest {
     public Event birth;
-    public Date birthday;
+    public Calendar birthday;
 
     @BeforeEach
     public void setUp() {
-        birthday = new Date(1759,1,25);
+        birthday = Calendar.getInstance();
+        birthday.set(1759, Calendar.JANUARY,25);
         birth = new Event("Birth", birthday, "Alloway, Ayrshire, Scotland", "National Records of Scotland, Old Parish Register for Ayr");
     }
 
@@ -25,11 +28,11 @@ public class EventTest {
 
     @Test
     public void hasDate() {
-        Date eventDate = birth.getDate();
+        Calendar eventDate = birth.getDate();
         assertEquals(birthday, eventDate);
-        assertEquals(25, eventDate.getDate());
-        assertEquals(1, eventDate.getMonth());
-        assertEquals(1759, eventDate.getYear());
+        assertEquals(25, eventDate.get(Calendar.DATE));
+        assertEquals(Calendar.JANUARY, eventDate.get(Calendar.MONTH));
+        assertEquals(1759, eventDate.get(Calendar.YEAR));
     }
 
     @Test
