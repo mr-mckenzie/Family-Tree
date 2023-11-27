@@ -28,4 +28,26 @@ public class Ancestor {
     public Gender getGender() {
         return gender;
     }
+
+    public ArrayList<Event> getLifeEvents() {
+        return lifeEvents;
+    }
+
+    public void setForename(String forename) {
+        this.forename = forename;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public void addLifeEvent(Event lifeEvent){
+        lifeEvents.add(lifeEvent);
+    }
+
+
 }
