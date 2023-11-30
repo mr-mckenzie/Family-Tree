@@ -1,12 +1,11 @@
 package com.familytree.example.familytreeservice;
 
-import com.familytree.example.familytreeservice.models.Event;
+import com.familytree.example.familytreeservice.models.Event.Birth;
+import com.familytree.example.familytreeservice.models.Event.Event;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.time.Year;
 import java.util.Calendar;
-import java.util.Date;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -18,7 +17,7 @@ public class EventTest {
     public void setUp() {
         birthday = Calendar.getInstance();
         birthday.set(1759, Calendar.JANUARY,25);
-        birth = new Event("Birth", birthday, "Alloway, Ayrshire, Scotland", "National Records of Scotland, Old Parish Register for Ayr");
+        birth = new Birth(birthday, "Alloway, Ayrshire, Scotland", "National Records of Scotland, Old Parish Register for Ayr");
     }
 
     @Test
