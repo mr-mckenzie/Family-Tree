@@ -1,11 +1,23 @@
 package com.familytree.example.familytreeservice.models.Event;
 
+import jakarta.persistence.*;
+
 import java.util.Calendar;
 
+//@Entity
+//@Table(name = "Event")
 public abstract class Event implements Comparable {
+
+//    @Id
+//    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//    private long id;
+//    @Column(name = "type")
     EventType type;
+//    @Column(name = "date")
     private Calendar date;
+//    @Column(name = "location")
     private String location;
+//    @Column(name = "citation")
     private String citation;
 
     public Event(Calendar date, String location, String citation) {
@@ -13,6 +25,9 @@ public abstract class Event implements Comparable {
         this.location = location;
         this.citation = citation;
     }
+
+//    public Event() {
+//    }
 
     public EventType getType() {
         return type;
