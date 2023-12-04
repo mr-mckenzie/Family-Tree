@@ -8,3 +8,11 @@ export const postAncestor = (payload) => {
     }).then(res => res.json())
 
 }
+
+export const getAllAncestors = () => {
+    return fetch(baseUrl + "ancestors", {
+        method: "GET",
+        headers: {"Content-Type" : "application/json"}
+    }).then(res => res.json())
+
+}

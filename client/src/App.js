@@ -7,7 +7,7 @@ function App() {
   const [forename, setForename] = useState("")
   const [surname, setSurname] = useState("")
   const [gender, setGender] = useState("")
-  const [ancestor, setAncestor] = useState({})
+  const [ancestors, setAncestors] = useState([])
 
   const handleFornameChange = (event) => {
     setForename(event.target.value)
@@ -21,12 +21,14 @@ function App() {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    setAncestor({
-      forename : forename,
-      surname : surname,
+    postAncestor({
+      forename: forename, 
+      surname : surname, 
       gender : gender
     })
-    postAncestor(ancestor)
+    setForename("")
+    setSurname("")
+    setGender("")
   }
 
   return (
