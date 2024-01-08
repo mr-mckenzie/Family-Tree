@@ -28,10 +28,9 @@ public class Ancestor {
 //    @ManyToMany(mappedBy = "ancestor_id")
 //    @JsonIgnoreProperties({"ancestor_id"})
 //    private ArrayList <Event> lifeEvents;
-//    @OneToOne
-//    @JoinColumn(name = "birth_id")
-//    @JsonIgnoreProperties("child_id")
-//    private Birth birth;
+    @OneToOne
+    @JoinColumn(name = "birth_id")
+    private Birth birth;
 //    @OneToOne
 //    @JoinColumn(name = "death_id")
 //    @JsonIgnoreProperties("deceased_id")
@@ -58,11 +57,19 @@ public class Ancestor {
 //        this.lifeEvents = new ArrayList<>();
 //        this.spouses = new ArrayList<>();
 //        this.children = new ArrayList<>();
-//        this.birth = null;
+        this.birth = null;
 //        this.death = null;
     }
 
     public Ancestor() {
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getForename() {
@@ -141,16 +148,13 @@ public class Ancestor {
 //        this.children.add(child);
 //    }
 
-//    public Birth getBirth() {
-//        return birth;
-//    }
+    public Birth getBirth() {
+        return birth;
+    }
 
-//    public void setBirth(int date, int month, int year) {
-//        Calendar birthDate = Calendar.getInstance();
-//        birthDate.set(year, month-1, date, 0, 0, 0);
-//        birthDate.set(Calendar.MILLISECOND, 0);
-//        this.birth = new Birth(birthDate,null, null);
-//    }
+    public void setBirth(Birth birth) {
+        this.birth = birth;
+    }
 
 //    public Death getDeath() {
 //        return death;
